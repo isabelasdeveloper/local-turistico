@@ -1,0 +1,31 @@
+@use './variaveis' as var;
+
+@mixin fs-fw($fs, $fw) {
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin h1() {
+  @include fs-fw(36px, 700);
+}
+
+@mixin h2() {
+  @include fs-fw(32px, 700);
+}
+
+@mixin h3() {
+  @include fs-fw(28px, 700);
+}
+
+@mixin headline() {
+  @include fs-fw(16px, 700);
+}
+
+@mixin paragraph() {
+  @include fs-fw(16px, 400);
+}
+
+@mixin subtitle() {
+  @include fs-fw(16px, 400);
+  font-style: italic;
+}

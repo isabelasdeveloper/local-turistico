@@ -1,2 +1,153 @@
-@use "./abstract/variaveis";
-@use "./abstract/mixins";
+@use './abstract/variaveis';
+@use './abstract/mixins';
+@use './abstract/reset';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  padding: 88px 80px;
+  background-color: variaveis.$bg-default;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  &-p {
+    @include mixins.headline();
+    text-transform: uppercase;
+    color: variaveis.$text-headline;
+    margin-bottom: 8px;
+  }
+  &-h1 {
+    color: variaveis.$text-primary;
+    margin-bottom: 40px;
+  }
+}
+
+.header-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-img {
+    border-radius: 28px;
+    margin-bottom: 24px;
+  }
+  &-p {
+    @include mixins.subtitle();
+    padding: 0 40px;
+    color: variaveis.$text-secondary;
+    text-align: center;
+  }
+}
+
+.divisor {
+  border: 1px solid variaveis.$border-primary;
+  width: 100%;
+  margin: 40px 0;
+}
+
+.container-home {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+  &-subtitle {
+    @include mixins.headline();
+    text-transform: uppercase;
+    color: variaveis.$text-headline;
+  }
+  &-title {
+    @include mixins.h2();
+    color: variaveis.$text-primary;
+  }
+  &-description {
+    @include mixins.paragraph();
+    color: variaveis.$text-secondary;
+  }
+}
+
+.container-content {
+  margin-bottom: 48px;
+  &-img {
+    border-radius: 28px;
+    margin-bottom: 24px;
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+  }
+  &-title {
+    @include mixins.h3();
+    padding-left: 15px;
+    margin-bottom: 5px;
+  }
+  &-card {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    &-description {
+      @include mixins.paragraph();
+      color: variaveis.$text-secondary;
+    }
+    &-tag {
+      &-title {
+        @include mixins.paragraph();
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.tag-historia {
+  @include mixins.paragraph();
+  font-weight: 700;
+  color: variaveis.$accent-blue;
+}
+
+.tag-casais {
+  @include mixins.paragraph();
+  font-weight: 700;
+  color: variaveis.$accent-purple;
+}
+
+.tag-familias {
+  @include mixins.paragraph();
+  font-weight: 700;
+  color: variaveis.$accent-pink;
+}
+
+.tag-orcamento {
+  @include mixins.paragraph();
+  font-weight: 700;
+  color: variaveis.$accent-orange;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 65px;
+}
+
+.footer-text {
+  @include mixins.paragraph();
+  color: variaveis.$text-secondary;
+  text-align: center;
+}
+
+.footer-credits {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 48px;
+  &-p {
+    font-family: 'Alice', serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: variaveis.$text-secondary;
+  }
+}
