@@ -1,3 +1,1 @@
-Projeto de HTML + CSS disponibilizado pela Rocketset.
-
-Tecnologias: HTML, CSS, SASS, Vite
+Projeto de HTML, SCSS, Vite disponibiizado pela Rocketseat.
